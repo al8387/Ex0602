@@ -12,15 +12,18 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private Button btn;
+    private int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn = findViewById(R.id.btn);
+        count = 0;
     }
 
     public void pressed(View view) {
-        btn.setText("Oh, yea, I’ve been clicked!");
+        count ++;
+        btn.setText("This is a click number: "+count);
     }
 }
