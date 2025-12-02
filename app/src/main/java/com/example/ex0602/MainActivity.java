@@ -24,11 +24,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void pressed(View view) {
         count ++;
-        if (count==6) {
-            btn.setText("Enough to click. Go to new start!");
-            count = 0;
+        int copy = count;
+        boolean valid = true;
+        while (copy!=0) {
+            if (copy==7 || copy%10==7) {
+                btn.setText("BOOM !");
+                valid = false;
+                break;
+            }
+            copy = copy/10;
         }
-        else {
+        if (count%7==0) {
+            btn.setText("BOOM !");
+        }
+        else if (valid) {
             btn.setText("This is a click number: "+count);
         }
     }
