@@ -24,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void pressed(View view) {
         count ++;
-        btn.setText("This is a click number: "+count);
+        if (count==6) {
+            btn.setText("Enough to click. Go to new start!");
+            count = 0;
+        }
+        else {
+            btn.setText("This is a click number: "+count);
+        }
     }
 }
